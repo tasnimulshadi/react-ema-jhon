@@ -1,0 +1,19 @@
+.header {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+.menu a:hover {
+    color: orange;
+}
