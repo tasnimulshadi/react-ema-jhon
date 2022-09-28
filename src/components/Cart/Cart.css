@@ -1,11 +1,11 @@
 .cart {
-    position: fixed;
-    right: 0;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
     height: 100vh;
     width: 250px;
     background-color: rgba(255, 153, 0, 0.3);
     padding: 30px 15px;
-    margin-top: 80px;
 }
 
 .cart h3 {

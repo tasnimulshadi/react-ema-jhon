@@ -39,11 +39,8 @@
 }
 
 .navigation {
-  height: 80px;
   background-color: #1C2B35;
   width: 100%;
-  position: fixed;
-  z-index: 3;
 }
 
 .container {

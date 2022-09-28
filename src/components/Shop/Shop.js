@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addProductToLocalStorage, getLocalStorageData } from '../../utilities/localStorage';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -18,12 +19,42 @@ const Shop = () => {
 
     //btn event handler add to cart 
     const handleAddToCart = product => {
-        const newCart = [...cart, product];
+        let newCart = [];
+
+        let addedProduct = cart.find(element => element.id === product.id)
+        if (!addedProduct) {
+            product.quantity = 1;
+            newCart = [...cart, product];
+        }
+        else {
+            const restCart = cart.filter(element => element.id !== product.id)
+            addedProduct.quantity++;
+            newCart = [...restCart, addedProduct];
+        }
+
         setCart(newCart);
+        addProductToLocalStorage('cart', product.id, product.quantity)
     }
 
     //btn event handler clear cart 
-    const handleClearCart = () => setCart([]);
+    const handleClearCart = () => {
+        setCart([]);
+        localStorage.removeItem('cart');
+    };
+
+    //on relode previous stored cart data
+    useEffect(() => {
+        const storedData = getLocalStorageData('cart');
+        let storedCart = [];
+        for (const item of storedData) {
+            const foundProduct = products.find(product => product.id === item.id);
+            if (foundProduct) {
+                foundProduct.quantity = item.qty;
+                storedCart.push(foundProduct)
+            }
+        }
+        setCart(storedCart);
+    }, [products])
 
 
     return (
