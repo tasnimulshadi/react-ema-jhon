@@ -1,0 +1,129 @@
+.form-container {
+    width: 400px;
+    border: 1px solid #95A0A7;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: -12px 12px 0px #ffe0b3;
+}
+
+.form-container h2 {
+    color: #2A414F;
+    font-weight: 400;
+    font-size: 35px;
+    text-align: center;
+}
+
+.form-container form {
+    padding: 0 42px;
+}
+
+.from-control {
+    margin-bottom: 20px;
+}
+
+.from-control label {
+    display: block;
+    font-size: 17px;
+    letter-spacing: 0.0015em;
+    color: #2A414F;
+    margin: 0px 0px 10px 10px;
+}
+
+.from-control input {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 0.0015em;
+    color: #2a414fde;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.form-submitBtn {
+    padding-top: 20px;
+}
+
+.form-submitBtn button {
+    width: 100%;
+    height: 50px;
+    background: rgba(255, 153, 0, 0.3);
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    border: 2px solid #0E161A;
+    color: #0E161A;
+    transition: .3s ease;
+}
+
+.form-submitBtn button:hover {
+    background: rgba(255, 153, 0, 0.641);
+    cursor: pointer;
+}
+
+.form-submitBtn p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+    margin-top: 10px;
+}
+
+.form-link {
+    color: red;
+    text-decoration: none;
+    color: #FF9900;
+    transition: .3s ease;
+}
+
+.form-link:hover {
+    text-decoration: underline;
+}
+
+.form-divider {
+    color: #95A0A7;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    padding: 0 42px;
+}
+
+.form-divider span {
+    height: 1.5px;
+    background-color: #95a0a7b8;
+    width: 35%;
+    display: inline-block;
+}
+
+.form-googleBtn {
+    padding: 42px;
+}
+
+.form-googleBtn button {
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid #0E161A;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    color: #2A414F;
+    transition: .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-googleBtn button:hover {
+    cursor: pointer;
+    background-color: #ffe1b367;
+}
