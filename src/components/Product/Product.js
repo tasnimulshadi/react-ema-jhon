@@ -6,9 +6,10 @@ import './Product.css';
 const Products = (props) => {
     const { img, name, price, seller, ratings } = props.product;
 
+
     return (
         <div className='product'>
-            <img src={img} alt={name + " image"} />
+            <img src={img ? img : 'https://miro.medium.com/max/720/0*-Ui8_tdq4SiQlOJR'} alt={name + " image"} />
             <div className='product-details'>
                 <h3>{name}</h3>
                 <div>

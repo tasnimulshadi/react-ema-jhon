@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from "react-router-dom";
 import { addProductToLocalStorage, getLocalStorageData } from '../../utilities/localStorage';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
@@ -6,13 +7,7 @@ import './Shop.css';
 
 const Shop = () => {
     //products data
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch('localShoes.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, []);
+    const products = useLoaderData();
 
     //cart data
     const [cart, setCart] = useState([]);
@@ -42,7 +37,7 @@ const Shop = () => {
         localStorage.removeItem('cart');
     };
 
-    //on relode previous stored cart data
+    //on relode show previous stored cart data
     useEffect(() => {
         const storedData = getLocalStorageData('cart');
         let storedCart = [];

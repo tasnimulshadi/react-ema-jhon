@@ -1,11 +1,13 @@
 import { faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import './Cart.css';
 
 
 const Cart = (props) => {
     const { cart, handleClearCart } = props;
+    const navigateToOrders = useNavigate();
 
     let quantity = 0
     let totalPrice = 0;
@@ -28,7 +30,7 @@ const Cart = (props) => {
                 <p className='grand-total'>Grand Total: ${grandTotal}</p>
             </div>
             <button className='btn-clearCart' onClick={handleClearCart}>Clear Cart <FontAwesomeIcon icon={faTrash} /></button>
-            <button className='btn-reviewOrder'>Review Order <FontAwesomeIcon icon={faArrowRight} /></button>
+            <button onClick={() => navigateToOrders('/orders')} className='btn-reviewOrder'>Review Order <FontAwesomeIcon icon={faArrowRight} /></button>
         </div>
     );
 };

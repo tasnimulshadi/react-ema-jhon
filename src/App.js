@@ -1,21 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header';
-import Shop from './components/Shop/Shop';
+import { RouterProvider } from "react-router-dom";
+import { routes } from './components/routes/routes';
 
 function App() {
   return (
     <div>
-      <nav className='navigation'>
-        <div className='container height100'>
-          <Header></Header>
-        </div>
-      </nav>
-
-      <div className='container'>
-        <Shop></Shop>
-      </div>
-
+      <RouterProvider router={routes} />
     </div>
   );
 }

@@ -29,4 +29,10 @@ const addProductToLocalStorage = (key, productId, productQty) => {
     setLocalStorageData(key, data);
 }
 
-export { addProductToLocalStorage, getLocalStorageData };
+const removeFromLocalStorage = id => {
+    const data = getLocalStorageData('cart');
+    const remainingItems = data.filter(items => items.id !== id);
+    setLocalStorageData('cart', remainingItems)
+}
+
+export { addProductToLocalStorage, getLocalStorageData, removeFromLocalStorage };
